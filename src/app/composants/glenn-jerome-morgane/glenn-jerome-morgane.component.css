@@ -1,0 +1,33 @@
+#monobjet {
+  width: 50vw;
+  height: 85vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#objet {
+  color: #f4eded;
+  background-color: #252121;
+}
+
+#objet h1 {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 75px;
+}
+
+#objet p {
+  width: 75%;
+  text-align: justify;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+}
+
+#objet p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}

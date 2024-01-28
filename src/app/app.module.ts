@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GlennJeromeMorganeComponent } from './composants/glenn-jerome-morgane/glenn-jerome-morgane.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GlennJeromeMorganeComponent
   ],
   imports: [
     BrowserModule,
