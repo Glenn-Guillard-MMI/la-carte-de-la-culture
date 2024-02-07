@@ -12,7 +12,7 @@ export class GlennJeromeMorganeComponent implements OnInit {
   ngOnInit(): void {
     this.threeService.initializeScene(
       document.getElementById('monobjet'),
-      'sca.glb'
+      'objetMorgane.glb'
     );
     this.threeService.render();
   }

@@ -9,13 +9,15 @@ export class ThreeService {
   private scene!: THREE.Scene;
   private camera!: THREE.PerspectiveCamera;
   private renderer!: THREE.WebGLRenderer;
-  private loader: THREE.Loader;
+  private loader: GLTFLoader;
+  private model!: THREE.Group; // Utilisez THREE.Group pour regrouper les objets
   private rotationAngle = 0;
   private objetafficher: string = '';
 
   constructor() {
-    this.loader = new THREE.Loader();
+    this.loader = new GLTFLoader();
   }
+
   initializeScene(parametre: HTMLElement | null, objetafficher: string) {
     if (parametre) {
       this.scene = new THREE.Scene();
@@ -28,8 +30,7 @@ export class ThreeService {
         0.1,
         1000
       );
-      this.camera.position.z = 5;
-      this.camera.position.set(0, 0, 5);
+      this.camera.position.z = 105;
 
       this.renderer = new THREE.WebGLRenderer();
       this.renderer.setSize(parametre.clientWidth, parametre.clientHeight);
@@ -42,29 +43,36 @@ export class ThreeService {
   }
 
   private loadModel() {
-    const loader = new GLTFLoader();
+    this.loader.load('../../assets/Objets3D/' + this.objetafficher, (gltf) => {
+      this.model = gltf.scene;
 
-    loader.load('../../assets/Objets3D/' + this.objetafficher, (gltf) => {
-      const model = gltf.scene;
-
-      model.traverse((child) => {
+      this.model.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           if (child.material instanceof THREE.MeshStandardMaterial) {
-            child.material.emissiveIntensity = 1;
+            const originalColor = child.material.color.clone();
 
+            // Appliquez la couleur et d'autres propriétés au besoin
+            child.material.color = originalColor;
+            child.material.emissiveIntensity = 1;
+            child.material.metalness = 1;
             child.material.emissive.setHex(child.material.color.getHex());
+            console.log(child.material.type);
           }
         }
       });
-      this.scene.add(model);
+
+      this.scene.add(this.model);
     });
   }
 
   render() {
     requestAnimationFrame(() => this.render());
 
-    this.rotationAngle -= 0.01;
-    this.scene.rotation.y = this.rotationAngle;
+    this.rotationAngle += 0.01;
+    // Assurez-vous que le modèle est utilisé pour la rotation
+    if (this.model) {
+      this.model.rotation.y = this.rotationAngle;
+    }
 
     this.renderer.render(this.scene, this.camera);
     this.camera.updateMatrixWorld();
