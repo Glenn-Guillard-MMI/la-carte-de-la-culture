@@ -1,0 +1,14 @@
+.choix {
+  background-image: url("../../../assets/pngegg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+a path {
+  fill: white;
+}
+
+path {
+  stroke: #0077be;
+}

@@ -1,8 +1,6 @@
-#monobjet {
-  width: 50vw;
-  height: 85vh;
-  margin-left: auto;
-  margin-right: auto;
+#scene {
+  width: 30vw;
+  height: 60vh;
 }
 
 #objet {

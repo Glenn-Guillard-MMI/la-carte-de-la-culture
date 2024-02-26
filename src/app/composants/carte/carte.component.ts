@@ -2,11 +2,11 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ServiceDeModélisationService } from 'src/app/Service/service-de-modélisation.service';
 
 @Component({
-  selector: 'app-glenn-jerome-morgane',
-  templateUrl: './glenn-jerome-morgane.component.html',
-  styleUrls: ['./glenn-jerome-morgane.component.css'],
+  selector: 'app-carte',
+  templateUrl: './carte.component.html',
+  styleUrls: ['./carte.component.css'],
 })
-export class GlennJeromeMorganeComponent implements OnInit {
+export class CarteComponent implements OnInit {
   @ViewChild('scene', { static: true }) scene!: ElementRef;
 
   constructor(private threeService: ServiceDeModélisationService) {}
