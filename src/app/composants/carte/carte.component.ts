@@ -13,6 +13,12 @@ export class CarteComponent implements OnInit {
 
   ngOnInit(): void {
     const glbFilePath = '../../../assets/Objets3D/low_poly_planet_earth.glb';
-    this.threeService.init(this.scene.nativeElement, glbFilePath, 2.5);
+    this.threeService.init(
+      this.scene.nativeElement,
+      glbFilePath,
+      2.5,
+      '0xffffff',
+      3.2
+    );
   }
 }

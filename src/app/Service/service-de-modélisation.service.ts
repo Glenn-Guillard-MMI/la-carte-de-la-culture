@@ -10,13 +10,41 @@ export class ServiceDeModélisationService {
   private scene: THREE.Scene = new THREE.Scene();
   private camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera();
   private renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer({
-    alpha: true, // Assurez-vous de définir alpha ici aussi
+    alpha: true,
   });
   private controls!: OrbitControls;
+  private object3D: THREE.Object3D | null = null; // Allow null
+  private ambientLight: THREE.AmbientLight | null = null; // Allow null
 
   constructor() {}
 
-  init(div: HTMLDivElement, glbFilePath: string, zoomObjet: number): void {
+  clearScene(): void {
+    if (this.object3D) {
+      this.scene.remove(this.object3D);
+      this.object3D.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.geometry.dispose();
+          child.material.dispose();
+        }
+      });
+      this.renderer.dispose();
+      this.object3D = null;
+    }
+
+    if (this.ambientLight) {
+      this.scene.remove(this.ambientLight);
+      this.ambientLight = null;
+    }
+  }
+
+  init(
+    div: HTMLDivElement,
+    glbFilePath: string,
+    zoomObjet: number,
+    colorAmbiance: string,
+    IntensiterColor: number
+  ): void {
+    this.clearScene();
     this.camera = new THREE.PerspectiveCamera(
       75,
       div.clientWidth / div.clientHeight,
@@ -28,25 +56,30 @@ export class ServiceDeModélisationService {
     this.renderer.setSize(div.clientWidth, div.clientHeight);
     div.appendChild(this.renderer.domElement);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 3.2);
-    this.scene.add(ambientLight);
-
     const loader = new GLTFLoader();
     loader.load(glbFilePath, (gltf) => {
-      const object = gltf.scene;
+      this.object3D = gltf.scene;
 
-      // Ajout des contrôles Orbit
       this.controls = new OrbitControls(this.camera, this.renderer.domElement);
       this.controls.enableZoom = false;
       this.controls.enablePan = true;
 
-      this.scene.add(object);
+      this.scene.add(this.object3D);
 
-      // Animation
+      // Ajoutez une lumière ambiante seulement si elle n'existe pas déjà
+      if (!this.ambientLight) {
+        this.ambientLight = new THREE.AmbientLight(
+          colorAmbiance,
+          IntensiterColor
+        );
+        this.scene.add(this.ambientLight);
+      }
+
       const animate = () => {
-        // Votre logique d'animation ici
         const delta = 0.005;
-        object.rotation.y += delta;
+        if (this.object3D) {
+          this.object3D.rotation.y += delta;
+        }
         this.renderer.render(this.scene, this.camera);
 
         requestAnimationFrame(animate);
