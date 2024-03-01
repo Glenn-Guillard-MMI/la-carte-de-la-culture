@@ -18,7 +18,7 @@ export class ThomasValentinComponent implements OnInit {
       this.scene.nativeElement,
       glbFilePath,
       1.5,
-      '0xffffff',
+      '0xeeeeee',
       5
     );
   }
