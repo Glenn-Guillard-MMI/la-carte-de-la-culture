@@ -1,0 +1,38 @@
+/* Global */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(24, 24, 24);
+    color: white;
+}
+
+/* Modèle 3D */
+#scene {
+    width: 90vw;
+    height: 60vh;
+    margin: 0 5vw;
+    background-color: rgb(24, 24, 24);
+}
+
+/* Typographie */
+h1 {
+    text-align: center;
+    margin: 5vh 25vw 3vh 25vw;
+    font-size: 2.8vw;
+}
+
+p {
+    text-align: center;
+    padding: 0 20vw;
+    font-size: 1.4vw;
+    margin-bottom: 8vh;
+}
+
+/* Image */
+img {
+    width: 3vw;
+    position: absolute;
+    top: 0.5vw;
+    left: 0.5vw;
+}
