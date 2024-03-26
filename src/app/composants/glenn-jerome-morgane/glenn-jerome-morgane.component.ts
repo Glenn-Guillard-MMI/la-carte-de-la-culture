@@ -13,11 +13,11 @@ export class GlennJeromeMorganeComponent implements OnInit {
   constructor(private threeService: ServiceDeModélisationService) {}
 
   ngOnInit(): void {
-    const glbFilePath = '../../../assets/Objets3D/oeilgrec3.glb';
+    const glbFilePath = '../../../assets/Objets3D/scarabee12.glb';
     this.threeService.init(
       this.scene.nativeElement,
       glbFilePath,
-      1,
+      8,
       '0xffffff',
       5
     );
