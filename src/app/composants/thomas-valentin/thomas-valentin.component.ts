@@ -16,13 +16,5 @@ export class ThomasValentinComponent implements OnInit {
 
 
  ngOnInit(): void {
-   const glbFilePath = '../../../assets/Objets3D/moais.glb';
-   this.threeService.init(
-     this.scene.nativeElement,
-     glbFilePath,
-     10,
-     '#ffffff',
-     3.7
-   );
  }
 }
