@@ -1,0 +1,108 @@
+#scene {
+  width: 100vw;
+  min-height: 100vh;
+  margin-top: 5%;
+}
+
+@font-face {
+  font-family: BagosseNormal;
+  src: url("../../../assets/fonts/bagoss-standard/BagossStandardTRIAL-Regular.ttf");
+}
+
+@font-face {
+  font-family: BagosseLight;
+  src: url("../../../assets/fonts/bagoss-standard/BagossStandardTRIAL-Light.ttf");
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 10vh;
+  width: 100vw;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+#auteur {
+  font-family: BagosseLight;
+  font-size: 1em !important;
+}
+
+#content {
+  width: 75%;
+  margin: 0 auto;
+}
+
+h1 {
+  height: fit-content !important;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 75px;
+}
+
+#lien:hover {
+  text-decoration: underline;
+}
+
+#lien {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3em;
+}
+
+#lien p {
+  margin: auto 0 !important;
+  padding: 0 !important;
+}
+
+#lien p:first-child {
+  margin: auto 0 !important;
+  width: fit-content;
+  margin-right: 0.7em !important;
+}
+
+#lien p:last-child {
+  width: fit-content;
+}
+
+#objet {
+  color: #f4eded;
+  background-color: #0077be;
+  font-family: BagosseNormal;
+  padding-top: 3em !important;
+}
+
+#objet p {
+  width: 75%;
+  text-align: justify;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+}
+
+#objet p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+
+#container3D {
+  width: 60%;
+  margin: 5vh auto;
+  height: 75vh;
+}
+
+#container3D iframe {
+  width: 100%;
+  height: 100%;
+}

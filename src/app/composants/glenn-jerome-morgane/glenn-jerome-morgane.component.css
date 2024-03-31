@@ -15,6 +15,7 @@
 #objet {
   color: #f4eded;
   padding-top: 50px;
+  height: calc(100vh - 50px);
   background-color: #0077be;
 }
 
@@ -29,7 +30,7 @@
 }
 
 #objet p {
-  width: 50%;
+  width: 45%;
   text-align: justify;
   margin-top: 80px;
   font-size: 17px;
