@@ -1,3 +1,12 @@
+@font-face {
+  font-family: BagosseNormal;
+  src: url("../../../assets/fonts/bagoss-standard/BagossStandardTRIAL-Regular.ttf");
+}
+@font-face {
+  font-family: PoppinsRegular;
+  src: url("../../../assets/fonts/Poppins/Poppins-Regular.ttf");
+}
+
 #scene {
   width: 30vw;
   height: 60vh;
@@ -5,27 +14,58 @@
 
 #objet {
   color: #f4eded;
-  background-color: #252121;
+  padding-top: 50px;
+  background-color: #0077be;
 }
 
 #objet h1 {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  font-size: 75px;
+  width: 70%;
+  text-align: center;
+  font-size: 45px;
+  font-family: BagosseNormal;
 }
 
 #objet p {
-  width: 75%;
+  width: 50%;
   text-align: justify;
-  margin-bottom: 25px;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 20px;
+  margin-top: 80px;
+  font-size: 17px;
+  font-family: PoppinsRegular;
 }
 
 #objet p:last-child {
   margin-bottom: 0;
   padding-bottom: 20px;
+}
+
+#objet a {
+  margin-left: 25px;
+  font-size: 25px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 25px;
+  padding: 5px;
+  font-family: BagosseNormal;
+  transition: all 0.5s ease;
+}
+
+#objet a:hover {
+  background-color: #f4eded;
+  border: transparent 2px solid;
+  color: #0077be;
+}
+#flex {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  gap: 150px;
+  margin-right: auto;
+}
+
+#BY {
+  margin-top: 25px;
 }
