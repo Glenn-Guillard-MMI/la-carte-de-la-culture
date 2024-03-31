@@ -13,7 +13,7 @@ export class GlennJeromeMorganeComponent implements OnInit {
   constructor(private threeService: ServiceDeModélisationService) {}
 
   ngOnInit(): void {
-    const glbFilePath = '../../../assets/Objets3D/scarabee12.glb';
+    const glbFilePath = '../../../assets/Objets3D/scarabee_version_final.glb';
     this.threeService.init(
       this.scene.nativeElement,
       glbFilePath,
