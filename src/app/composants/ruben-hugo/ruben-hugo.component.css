@@ -1,0 +1,38 @@
+#scene {
+  width: 30vw;
+  height: 60vh;
+  display: flex;
+  width: auto;
+}
+
+#page {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #f4eded;
+  background-color: #252121;
+}
+
+#page h1 {
+  text-align: center;
+  margin-bottom: 10vh;
+  font-size: 25px;
+}
+
+#page p {
+  margin: 5px;
+  text-align: justify;
+  width: 600px;
+  margin: auto;
+}
+.text{
+    font-size: 15px;
+}
+
+.signature{
+    padding: 15vh;
+    justify-content: end;
+    display: flex;
+    font-size: 8px;
+
+}
